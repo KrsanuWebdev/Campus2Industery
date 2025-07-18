@@ -1,0 +1,78 @@
+/* style.css */
+html{
+      scroll-behavior: smooth;
+}
+:root {
+    --primary: #4361ee;
+    --secondary: #4cc9f0;
+    --accent: #f72585;
+    --dark: #212529;
+    --light: #f8f9fa;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow-x: hidden;
+}
+
+/* Hero Animation */
+.hero {
+    perspective: 1000px;
+}
+.hero-content {
+    transform-style: preserve-3d;
+    animation: float 6s ease-in-out infinite;
+}
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) rotateY(0deg);
+    }
+    50% {
+        transform: translateY(-20px) rotateY(5deg);
+    }
+}
+
+/* Card Animation */
+.course-card {
+    transition: all 0.3s ease;
+    transform-origin: center bottom;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+.course-card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15);
+}
+
+/* Button Animation */
+.btn-primary {
+    transition: all 0.3s ease;
+    background: linear-gradient(45deg, var(--primary), var(--secondary));
+    background-size: 200% 200%;
+    animation: gradient 4s ease infinite;
+}
+@keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Section Reveal Animation */
+.section {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease;
+}
+.section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Pulse Animation */
+.pulse-animation {
+    animation: pulse 2s infinite;
+}
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(112, 255, 85, 0.7); }
+    70% { box-shadow: 0 0 0 10px rgba(112, 255, 85, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(112, 255, 85, 0); }
+}
